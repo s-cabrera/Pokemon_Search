@@ -1,5 +1,4 @@
-//place holder for now
-var requestUrl = "https://pokeapi.co/api/v2/pokemon?limit=151"
+var requestUrl;
 var searchBarData = document.querySelector('.btn')
 
 async function getApi(requestUrl){
