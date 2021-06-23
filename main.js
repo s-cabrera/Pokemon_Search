@@ -27,15 +27,25 @@ searchBarData.addEventListener('click',function(event){
   .then (function(dataApi_1){
     console.log(dataApi_1);
   })
-requestUrl_2 = `https://api.pokemontcg.io/v2/cards?q=name:${textInput}&appid=9f5ed968cd7052cfa23b29d8fa2f4bad`
+  // 2nd api call with user input
+requestUrl_2 = `https://api.pokemontcg.io/v2/cards?q=name:${textInput}&appid=dbd45731-4537-4e36-83cf-77eafd972ad5`
 fetch(requestUrl_2)
   .then(function (response){
     return response.json()
   })
+  // clg api 2nd api data
   .then (function(dataApi_2){
     console.log(dataApi_2);
+    // console.log(dataApi_2.data[0]);
   })
 })
+
+function searchHistory(dataApi_2,dataApi_1){
+ console.log(dataApi_2);
+ getApi(requestUrl)
+}
+searchHistory()
+
 
 
 
