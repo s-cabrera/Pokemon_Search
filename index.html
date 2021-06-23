@@ -18,30 +18,32 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="is-flex is-flex-direction-row is-flex-wrap-wrap">
-        <!-- Header -->
-        <header class="column is-full">
-            <h1> Pokemon Search</h1>
-        </header>
+    <!-- Header -->
+    <header class="column is-full">
+        <h1> Pokemon Search</h1>
+    </header>
+    <div class="is-flex is-flex-direction-row is-justify-content-center is-flex-wrap-wrap" style="min-height: 90vh;">          
         <!-- Recents Searches Sidebar -->
         <div class="column is-4">
             <article class="panel">
                 <p class="panel-heading poke_red">
-                  Primary
+                  Recent Searches
                 </p>
+                <!-- Filters -->
                 <p class="panel-tabs">
                   <a class="is-active">All</a>
-                  <a>Public</a>
-                  <a>Private</a>
-                  <a>Sources</a>
-                  <a>Forks</a>
+                  <a>Element</a>
+                  <a>Abilities</a>
+                  <a>Items</a>
                 </p>
+                <!-- Search -->
                 <div class="panel-block">
                   <p class="control has-icons-left">
                     <input class="input is-primary" type="text" placeholder="Search">
                     <span class="icon is-left">
                       <i class="fas fa-search" aria-hidden="true"></i>
                     </span>
+                    <button type="submit" ></button>
                   </p>
                 </div>
                 <a class="panel-block is-active">
@@ -71,30 +73,62 @@
               </article>
         </div>
         
-        <!-- Search bar -->
-        <div class="column is-8 field is-horizontal is-align-self-center is-flex-grow-0">
-            <!-- <span>Hello World</span>   -->
-            <div class="field-label is-normal">
-              <label class="label">Search:</label>
+       <!-- Search Bar/ Pokemon Display -->
+        <div class="column is-8 is-align-self-start is-align-content-center is-flex-grow-0">
+            <!-- Search bar -->
+            <div class="field is-horizontal is-invisible">    
+                <!-- <span>Hello World</span>   -->
+                <div class="field-label is-normal">
+                    <label class="label">Search:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">  
+                            <input class="input" type="text" placeholder="Pokemon name" id="search_input">
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">  
+                            <input class="button" type="submit" value="Search" id="search_btn">
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="field-body">
-              <div class="field">
-                <p class="control">  
-                  <input class="input" type="text" placeholder="Pokemon name" id="search_input">
-                </p>
-              </div>
-              <div class="field">
-                <p class="control">  
-                    <input class="button" type="submit" value="Search" id="search_btn">
-                </p>
-              </div>
+            <!-- Pokemon Display Card-->
+            <div class="is-card is-align-self-center is-flex">
+                <div class="card-image">
+                    <figure class="image">
+                        <img src="./assets/charizard.png" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content is-flex-grow-0">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image is-48x48">
+                          <img  src="./assets/fire.png" alt="Placeholder image">
+                        </figure>
+                      </div>
+                      <div class="media-content">
+                        <p class="title is-4">Pokemon</p>
+                        <p class="subtitle is-6">Element: Fire</p>
+                      </div>
+                    </div>
+            
+                    <div class="content">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </div> 
 
-    
+    <!-- Footer -->
+   <footer class="column is-full" id="footer">Hello Peeps</footer> 
 
-    <footer>Hello Peeps</footer>
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

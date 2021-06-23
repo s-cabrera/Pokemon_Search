@@ -4,6 +4,7 @@
     /* font-family: 'Staatliches', cursive; */
 }
 header{
+    height: fit-content;
     text-align: center;
     font-size: 32px;
     background: linear-gradient(90deg, rgba(235,59,51,1) 75%, rgba(222,222,222,1) 98%);
@@ -19,10 +20,9 @@ header{
     -webkit-text-fill-color: white;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
+#footer{
     width: 100%;
+    height: fit-content;
     padding: 2px;
     text-align: center;
     font-size: 24px;
@@ -32,3 +32,28 @@ footer{
     font-family: 'Staatliches', cursive;
     border-top: 2px solid black;
 }
+
+.is-card{
+    border: 2px solid black;
+    margin: 0px 50px;
+}
+
+.card-image{
+    width: 40%;
+    padding: 10px;
+    border-right: 2px solid grey;
+    margin: auto;
+}
+.image{
+    width:100%;
+}
+
+hr{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* 
+#display-image{
+    width: 100%;
+} */
