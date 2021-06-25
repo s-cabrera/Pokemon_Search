@@ -65,4 +65,3 @@ async function api(textInput){
 
 
 
-
