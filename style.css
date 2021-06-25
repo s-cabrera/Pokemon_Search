@@ -3,6 +3,14 @@
     font-family: 'Chewy', cursive;
     /* font-family: 'Staatliches', cursive; */
 }
+body{
+    height: 100vh;
+    overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
 header{
     height: fit-content;
     text-align: center;
@@ -53,7 +61,21 @@ hr{
     margin-bottom: 0px;
 }
 
-/* 
-#display-image{
-    width: 100%;
-} */
+.onload-search-bar{
+    width:85%;
+    margin: auto;
+}
+
+#container-1, article[class="panel"]{
+    height:100%;
+}
+
+#content{
+    height: 80%;
+}
+
+.dropdown button{
+    padding: 0px;
+    border: none;
+    text-align: end;
+}
