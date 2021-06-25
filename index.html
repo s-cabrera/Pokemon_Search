@@ -29,11 +29,11 @@
        
         
         <!-- Recents Searches Sidebar -->
-        <div class="column is-4" id="container-1">
+        <div class="column is-4 is-hidden" id="container-1">
             <article class="panel">
                 <p class="panel-heading poke_red">
                   Recent Searches
-                </p> -->
+                </p>
                 <!-- Filters -->
                 <div class="navbar" role="navigation" aria-label="main navigation">
                     <div class="navbar-brand">
@@ -139,14 +139,14 @@
                 <div class="field-body">
                     <div class="field is-flex">
                         <input class="input" type="text" placeholder="Pokemon name" id="search-1">
-                        <button class="button is-loading" type="submit" id="search-btn-1">
+                        <button class="button" type="submit" id="search-btn-1">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <!-- Pokemon Display Card-->
-            <!-- <div class="is-card is-align-self-center is-flex">
+            <div class="is-card is-align-self-center is-flex is-hidden" id='infoCard'>
                 <div class="card-image">
                     <figure class="image">
                         <img alt="Placeholder image" id="display-image">
@@ -156,7 +156,7 @@
                     <div class="media">
                       <div class="media-left">
                         <figure class="image is-48x48">
-                          <img  src="./assets/fire.png" alt="Placeholder image">
+                          <img  src="./assets/fire.png" alt="Placeholder image" id='sprite'>
                         </figure>
                       </div>
                       <div class="media-content">
@@ -167,10 +167,8 @@
             
                     <div class="content">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      Phasellus nec iaculis mauris.
                       <br>
-                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                     </div>
                 </div>
             </div>
