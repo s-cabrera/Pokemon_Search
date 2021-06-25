@@ -31,7 +31,7 @@ On search button click:
 
 function addSearchItem(name, img){
     let a = $('<a class="panel-block is-active">');
-    let image = $(`<image src=${img}>`);
+    let image = $(`<image src=${img} class="searchItem-img">`);
     let p = $('<p>');
     //let audio = $('<audio controls>');
     //let source = $(`<source src=${sound} type="audio/ogg">`);
