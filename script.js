@@ -80,7 +80,8 @@ async function apiCall(pokemon){
             return;
         }
         
-        console.log(`Name: ${data.name}, Description: ${data.flavor_text_entries}`)
+        console.log(`Name: ${data.name}, Description: ${data.flavor_text_entries[0].flavor_text}`)
+        $('content').text(data.flavor_text_entries[0].flavor_text)
       });
 }
 
