@@ -32,7 +32,7 @@
        
         
         <!-- Recents Searches Sidebar -->
-        <div class="column is-4" id="container-1">
+        <div class="column is-4 is-hidden" id="container-1">
             <article class="panel">
                 <p class="panel-heading poke_red">
                   Recent Searches
@@ -124,7 +124,7 @@
         </div>
         
        <!-- Search Bar/ Pokemon Display -->
-        <div class="column is-8 is-align-self-center is-align-content-center">
+        <div class="column is-8 is-align-self-center is-align-content-center" id='display'>
             <!-- Search bar -->
             <p style="text-align: center; color: rgb(187, 36, 36);">Input invalid</p>
             <div class="field is-horizontal onload-search-bar ">    
@@ -141,7 +141,7 @@
                 </div>
             </div>
             <!-- Pokemon Display Card-->
-            <div class="is-card is-align-self-center is-flex">
+            <div class="is-card is-align-self-center is-flex is-hidden" id='infoCard'>
                 <div class="card-image">
                     <figure class="image">
                         <img alt="Placeholder image" id="display-image">
@@ -151,7 +151,7 @@
                     <div class="media">
                       <div class="media-left">
                         <figure class="image is-48x48">
-                          <img  src="./assets/fire.png" alt="Placeholder image">
+                          <img  src="./assets/fire.png" alt="Placeholder image" id='sprite'>
                         </figure>
                       </div>
                       <div class="media-content">
