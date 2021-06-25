@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Search</title>
     <!-- Links -->
+    <!-- Fonts Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,75 +24,124 @@
     <header class="column is-full">
         <h1> Pokemon Search</h1>
     </header>
-    <div class="is-flex is-flex-direction-row is-justify-content-center is-flex-wrap-wrap" style="min-height: 90vh;">          
+    <div class="is-flex is-flex-direction-row is-justify-content-center 
+        is-flex-wrap-wrap is-align-content-start" id="content">          
+       
+        
         <!-- Recents Searches Sidebar -->
-         <!-- <div class="column is-4">
+        <div class="column is-4" id="container-1">
             <article class="panel">
                 <p class="panel-heading poke_red">
                   Recent Searches
                 </p> -->
                 <!-- Filters -->
-                <!-- <p class="panel-tabs">
-                  <a class="is-active">All</a>
-                  <a>Element</a>
-                  <a>Abilities</a>
-                  <a>Items</a>
-                </p> -->
-                <!-- Search -->
-                <!-- <div class="panel-block">
-                  <p class="control has-icons-left">
-                    <input class="input is-primary" type="text" placeholder="Search">
-                    <span class="icon is-left">
-                      <i class="fas fa-search" aria-hidden="true"></i>
-                    </span>
-                    <button type="submit" ></button>
-                  </p>
+                <div class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                      </a>
+                    </div>
+                  
+                    <div id="navbarBasicExample" class="navbar-menu">
+                      <div class="navbar-start">
+                        <a class="navbar-item">
+                          All
+                        </a>
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+                          <a class="navbar-link">
+                            Elements
+                          </a>
+                  
+                          <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                              About
+                            </a>
+                            <a class="navbar-item">
+                              Jobs
+                            </a>
+                            <a class="navbar-item">
+                              Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                              Report an issue
+                            </a>
+                          </div>
+                        </div>
+                        
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                              Abilities
+                            </a>
+                    
+                            <div class="navbar-dropdown">
+                              <a class="navbar-item">
+                                About
+                              </a>
+                              <a class="navbar-item">
+                                Jobs
+                              </a>
+                              <a class="navbar-item">
+                                Contact
+                              </a>
+                              <hr class="navbar-divider">
+                              <a class="navbar-item">
+                                Report an issue
+                              </a>
+                            </div>
+                          </div>
+                  
+                        <div class="navbar-item has-dropdown is-hoverable">
+                          <a class="navbar-link">
+                            Items
+                          </a>
+                  
+                          <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                              About
+                            </a>
+                            <a class="navbar-item">
+                              Jobs
+                            </a>
+                            <a class="navbar-item">
+                              Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item">
+                              Report an issue
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                 </div>
-                <a class="panel-block is-active">
-                  <span class="panel-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                  </span>
-                  bulma
-                </a>
-                <a class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                  </span>
-                  marksheet
-                </a>
-                <a class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                  </span>
-                  minireset.css
-                </a>
-                <a class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                  </span>
-                  jgthms.github.io
-                </a>
+                <!-- Search -->
+                <div class="panel-block is-flex">
+                    <input class="input" type="text" placeholder="Search" id="search-2">
+                    <button class="button" type="submit" id="search-btn-2">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
               </article>
-        </div> -->
+        </div>
         
        <!-- Search Bar/ Pokemon Display -->
-        <div class="column is-8 is-align-self-start is-align-content-center is-flex-grow-0" id='display'>
+        <div class="column is-8 is-align-self-center is-align-content-center" id='display'>
             <!-- Search bar -->
-            <div class="field is-horizontal">    
+            <div class="field is-horizontal onload-search-bar">    
                 <!-- <span>Hello World</span>   -->
                 <div class="field-label is-normal">
                     <label class="label">Search:</label>
                 </div>
                 <div class="field-body">
-                    <div class="field">
-                        <p class="control">  
-                            <input class="input" type="text" placeholder="Pokemon name" id="search_input">
-                        </p>
-                    </div>
-                    <div class="field">
-                        <p class="control">  
-                            <input class="button" type="submit" value="Search" id="search_btn">
-                        </p>
+                    <div class="field is-flex">
+                        <input class="input" type="text" placeholder="Pokemon name" id="search-1">
+                        <button class="button is-loading" type="submit" id="search-btn-1">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -98,7 +149,7 @@
             <!-- <div class="is-card is-align-self-center is-flex">
                 <div class="card-image">
                     <figure class="image">
-                        <img src="./assets/charizard.png" alt="Placeholder image">
+                        <img alt="Placeholder image" id="display-image">
                     </figure>
                 </div>
                 <div class="card-content is-flex-grow-0">
@@ -122,16 +173,18 @@
                       <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                     </div>
                 </div>
-            </div> -->
-        </div>
+            </div>
+        </div>   
     </div> 
 
     <!-- Footer -->
-   <footer class="column is-full" id="footer">Hello Peeps</footer> 
+    <footer class="column is-full" id="footer">Hello Peeps</footer> 
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./main.js"></script>
+    <script src="./script.js"></script>
+
 </body>
 </html>
