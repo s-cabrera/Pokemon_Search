@@ -1,81 +1,86 @@
-*{
-    font-family: 'Shadows Into Light', cursive;
-    font-family: 'Chewy', cursive;
-    /* font-family: 'Staatliches', cursive; */
+* {
+  font-family: "Shadows Into Light", cursive;
+  font-family: "Chewy", cursive;
+  /* font-family: 'Staatliches', cursive; */
 }
-body{
-    height: 100vh;
-    overflow-y: scroll;
+body {
+  height: 100vh;
+  overflow-y: scroll;
 }
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-header{
-    height: fit-content;
-    text-align: center;
-    font-size: 32px;
-    background: linear-gradient(90deg, rgba(235,59,51,1) 75%, rgba(222,222,222,1) 98%);
-    -webkit-text-stroke: 2px black;
-    -webkit-text-fill-color: white;
-    font-family: 'Shadows Into Light', cursive;
-    /* font-family: 'Staatliches', cursive; */
-    border-bottom: 2px solid black;
+header {
+  height: fit-content;
+  text-align: center;
+  font-size: 32px;
+  background: linear-gradient(
+    90deg,
+    rgba(235, 59, 51, 1) 75%,
+    rgba(222, 222, 222, 1) 98%
+  );
+  -webkit-text-stroke: 2px black;
+  -webkit-text-fill-color: white;
+  font-family: "Shadows Into Light", cursive;
+  /* font-family: 'Staatliches', cursive; */
+  border-bottom: 2px solid black;
 }
-.poke_red{
-    background-color: #eb3b33;
-    -webkit-text-stroke: 1px black;
-    -webkit-text-fill-color: white;
-}
-
-#footer{
-    width: 100%;
-    height: fit-content;
-    padding: 2px;
-    text-align: center;
-    font-size: 24px;
-    background-color: #eb3b33;
-    -webkit-text-stroke: 1px black;
-    -webkit-text-fill-color: white;
-    font-family: 'Staatliches', cursive;
-    border-top: 2px solid black;
+.poke_red {
+  background-color: #eb3b33;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
 }
 
-.is-card{
-    border: 2px solid black;
-    margin: 0px 50px;
+#footer {
+  width: 100%;
+  height: fit-content;
+  padding: 2px;
+  text-align: center;
+  font-size: 24px;
+  background-color: #eb3b33;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: white;
+  font-family: "Staatliches", cursive;
+  border-top: 2px solid black;
 }
 
-.card-image{
-    width: 40%;
-    padding: 10px;
-    border-right: 2px solid grey;
-    margin: auto;
-}
-.image{
-    width:100%;
+.is-card {
+  border: 2px solid black;
+  margin: 0px 50px;
 }
 
-hr{
-    margin-top: 0px;
-    margin-bottom: 0px;
+.card-image {
+  width: 40%;
+  padding: 10px;
+  border-right: 2px solid grey;
+  margin: auto;
+}
+.image {
+  width: 100%;
 }
 
-.onload-search-bar{
-    width:85%;
-    margin: auto;
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-#container-1, article[class="panel"]{
-    height:100%;
+.onload-search-bar {
+  width: 85%;
+  margin: auto;
 }
 
-#content{
-    height: 80%;
+#container-1,
+article[class="panel"] {
+  height: 100%;
 }
 
-.dropdown button{
-    padding: 0px;
-    border: none;
-    text-align: end;
+#content {
+  height: 80%;
+}
+
+.dropdown button {
+  padding: 0px;
+  border: none;
+  text-align: end;
 }
