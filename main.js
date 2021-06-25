@@ -16,7 +16,7 @@ searchButton.on('click',function(event) {
   event.preventDefault();
   var textInput = $('.input').val();
   console.log(textInput);
- requestUrl =`https://pokeapi.co/api/v2/pokemon/${textInput}`
+  requestUrl =`https://pokeapi.co/api/v2/pokemon/${textInput}`
   // console.log(data);
   // fetched pokemon data
   // had to recall the api again to be able to display the data. was only displaying the dynamic api link with user search input 
@@ -48,11 +48,11 @@ function displayPokemon(api) {
   var imageDiv = $('<div>');
   imageDiv.addClass('card-image');
   var cardFigure = $('<figure>');
-  cardFigure.addClass('image is-4by3');
+  cardFigure.addClass('image');
   var cardImage = $('<img>');
   cardImage.attr({src: "https://bulma.io/images/placeholders/1280x960.png", alt: "pokemon sprite"});
   var contentDiv = $('<div>');
-  contentDiv.addClass('card-content');
+  contentDiv.addClass('card-content is-flex-grow-0');
   var mediaDiv = $('<div>');
   mediaDiv.addClass('media');
   var mediaLeft = $('<div>');
