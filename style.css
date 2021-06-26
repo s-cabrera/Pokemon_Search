@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   font-family: "Shadows Into Light", cursive;
   font-family: "Chewy", cursive;
@@ -6,11 +7,23 @@
 body {
   height: 100vh;
   overflow-y: scroll;
+=======
+*{
+    /* font-family: 'Shadows Into Light', cursive; */
+    /* font-family: 'Chewy', cursive; */
+    /* font-family: 'Staatliches', cursive; */
+}
+body{
+    height: 100%;
+    overflow-y: scroll;
+    /* background-color: rgb(153, 153, 153); */
+>>>>>>> 9f780e328f44188b465383e6fe386882007bd6d4
 }
 body::-webkit-scrollbar {
   display: none;
 }
 
+<<<<<<< HEAD
 header {
   height: fit-content;
   text-align: center;
@@ -48,6 +61,44 @@ header {
 .is-card {
   border: 2px solid black;
   margin: 0px 50px;
+=======
+header{
+    height: fit-content;
+    text-align: center;
+    font-size: 40px;
+    background: linear-gradient(90deg, rgba(204,56,49,1) 75%, rgba(222,222,222,1) 98%);
+    text-shadow: 2px 2px rgb(53, 53, 53);
+    /* -webkit-text-stroke: 1px black; */
+    -webkit-text-fill-color: white;
+    font-family: 'Do Hyeon', sans-serif;
+    /* font-family: 'Kirang Haerang', cursive; */
+    /* font-family: 'Shadows Into Light', cursive; */
+    /* font-family: 'Staatliches', cursive; */
+    border-bottom: 5px solid black;
+}
+
+#footer{
+    width: 100%;
+    height: fit-content;
+    padding: 2px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(204,56,49,1);
+    text-shadow: 2px 2px rgb(53, 53, 53);
+    /* -webkit-text-stroke: 1px black; */
+    -webkit-text-fill-color: white;
+    font-family: 'Do Hyeon', sans-serif;
+    /* font-family: 'Kirang Haerang', cursive; */
+    /* font-family: 'Shadows Into Light', cursive; */
+    /* font-family: 'Staatliches', cursive; */
+    border-top: 5px solid black;
+}
+
+.is-card{
+    border: 2px solid darkgray;
+    border-radius: 5px;
+    margin: 0px 50px;
+>>>>>>> 9f780e328f44188b465383e6fe386882007bd6d4
 }
 
 .card-image {
@@ -75,6 +126,7 @@ article[class="panel"] {
   height: 100%;
 }
 
+<<<<<<< HEAD
 #content {
   height: 80%;
 }
@@ -84,3 +136,44 @@ article[class="panel"] {
   border: none;
   text-align: end;
 }
+=======
+#content, #display{
+    height: 100vh;
+    background-color: rgb(228, 228, 228);
+}
+
+.dropdown button{
+    padding: 0px;
+    border: none;
+    text-align: end;
+}
+
+.panel{
+    overflow-y: scroll;
+    border: 2px solid darkgray;
+}
+
+.panel::-webkit-scrollbar {
+    display: none;
+}
+
+.searchItem-img{
+    height: 80px;
+    width: 80px;
+}
+
+
+#infoCard{
+    font-size: 30vh;
+}
+
+#sprite{
+    height:80px; 
+    width:80px;
+}
+
+img {font-size: 10%;}
+#poke-name{font-size: 30%;}
+#poke-element{font-size:15%;}
+#flavor-text{font-size:10%;}
+>>>>>>> 9f780e328f44188b465383e6fe386882007bd6d4
