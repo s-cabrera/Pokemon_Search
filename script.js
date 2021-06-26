@@ -17,7 +17,7 @@ var pokeFlavor = $('.content');
 function addSearchItem(name, img){
     let a = $('<a class="panel-block is-active">');
     let image = $(`<image src=${img} class="searchItem-img">`);
-    let p = $('<p>');
+    let p = $('<p class="sidebar-pokename">');
     p.text(name);
     
     sidebar.append(a);

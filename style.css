@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
 header {
   height: fit-content;
   text-align: center;
-  font-size: 40px;
+  font-size: 5vh;
   background: linear-gradient(
     90deg,
     rgba(204, 56, 49, 1) 75%,
@@ -100,18 +100,16 @@ article[class="panel"] {
   display: none;
 }
 
-.searchItem-img {
-  height: 80px;
-  width: 80px;
-}
-
 #infoCard {
   font-size: 30vh;
 }
 
 #sprite {
-  height: 80px;
-  width: 80px;
+  height: 13vh;
+  width: 13vh;
+  margin-right: 5%;
+  background-color: rgb(197, 190, 190);
+  border: 4px solid black;
 }
 
 img {
@@ -125,4 +123,22 @@ img {
 }
 #flavor-text {
   font-size: 10%;
+}
+
+article[class="panel"] {
+  font-size: 10vh;
+}
+
+#panel-heading {
+  font-size: 40%;
+}
+#navbar {
+  font-size: 30%;
+}
+.sidebar-pokename {
+  font-size: 60%;
+}
+.searchItem-img {
+  height: 10vh;
+  width: 10vh;
 }
