@@ -4,7 +4,7 @@
     /* font-family: 'Staatliches', cursive; */
 }
 body{
-    height: 100vh;
+    height: 100%;
     overflow-y: scroll;
     /* background-color: rgb(153, 153, 153); */
 }
@@ -75,7 +75,7 @@ hr{
 }
 
 #content, #display{
-    height: 82vh;
+    height: 100vh;
     background-color: rgb(228, 228, 228);
 }
 
@@ -99,7 +99,17 @@ hr{
     width: 80px;
 }
 
+
+#infoCard{
+    font-size: 30vh;
+}
+
 #sprite{
     height:80px; 
     width:80px;
 }
+
+img {font-size: 10%;}
+#poke-name{font-size: 30%;}
+#poke-element{font-size:15%;}
+#flavor-text{font-size:10%;}
