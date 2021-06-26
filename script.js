@@ -14,48 +14,22 @@ var pokeName = $('.title');
 var pokeType = $('.subtitle');
 var pokeFlavor = $('.content');
 
-// gifAPI("burgers");
-
-// async function gifAPI(input){
-//     fetch(`https://api.giphy.com/v1/gifs/trending?api_key=bqnf9WXuJ1DCV1XQbL6Ap3Zl0lvARjdW&q=${input}&rating=pg&lang=en`)
-//     .then(function(response){
-//         return response.json()
-//     })
-//     .then(function(data){
-//         console.log(data);
-//     });
-// }
-
-/*
-On search button click: 
-    1) send value of input to the API
-    2) Add is-loading class until data returns
-    3) Remove is-loading class after data is used
-    4) Hide the main search bar
-    5) Display the Recent Searches search bar
-*/
-
-
-function addSearchItem(name, img, sound){
+function addSearchItem(name, img){
     let a = $('<a class="panel-block is-active">');
-    let image = $(`<image src=${img}>`);
+    let image = $(`<image src=${img} class="searchItem-img">`);
     let p = $('<p>');
-    //let audio = $('<audio controls>');
-    //let source = $(`<source src=${sound} type="audio/ogg">`);
     p.text(name);
-    displayImageEl.attr('src', img);
+    
     sidebar.append(a);
     a.append(image);
     a.append(p);
-    //a.append(audio);
-    //audio.append(source);
 }
 
 async function apiCall(pokemon){
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}/`)
   .then(function(response){
     if (!response.ok) {
-        console.log('Network response was not ok');
+        $('.invalid').removeClass('is-invisible');       
         return 0;
     }
     return response.json();
@@ -65,6 +39,8 @@ async function apiCall(pokemon){
           console.log("No data recorded")
           return;
       }
+        console.log(data);
+        id = data.id;
         var name = data.name;
         name = name[0].toUpperCase() + name.slice(1, (name.length));
         searches.push(name);
@@ -75,6 +51,23 @@ async function apiCall(pokemon){
         apiCallAgain(data.name);
         pokemonApi_2(data.name);
     });
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.toLowerCase()}/`)
+    .then(function(response){
+      if (!response.ok) {
+          console.log('Network response was not ok');
+          return 0;
+      }
+      return response.json();
+    })
+    .then(function(data){
+        if(!data){
+            console.log("No data recorded")
+            return;
+        }
+        
+        console.log(`Name: ${data.name}, Description: ${data.flavor_text_entries[0].flavor_text}`)
+        $('content').text(data.flavor_text_entries[0].flavor_text)
+      });
 }
 
 async function apiCallAgain(pokemon) {
@@ -103,7 +96,9 @@ async function api(textInput){
     let data = await response.json();
     return data
   }
- // #2 pass textInput is now in function pokemonApi_2
+
+//--------  Flavor text API call ---------// 
+// #2 pass textInput is now in function pokemonApi_2
   function pokemonApi_2(textInput) {
   //#3 pass now textInput is being passing into api
   // .then(response is holding the api data)
@@ -120,9 +115,10 @@ async function api(textInput){
 function displayInfo(api, name) {
     let icon = api.sprites.front_default;
     let type = api.types[0].type.name;
+    type =  type[0].toUpperCase() + type.slice(1, (type.length))
     pokeSprite.attr('src', icon);
     pokeName.text(name);
-    pokeType.text(type);
+    pokeType.text(`Element: ${type}`);
 }
 
 var  searchBtn1Handler = function(){

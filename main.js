@@ -11,8 +11,10 @@ async function getApi(requestUrl){
   })
 }
 // event listener that takes user input and displays data of pokimon in web console 
-// getApi(requestUrl);
-searchButton.on('click',function(event) {
+getApi(requestUrl);
+
+
+searchBarData.addEventListener('click',function(event){
   event.preventDefault();
   var textInput = $('.input').val();
   console.log(textInput);
@@ -26,21 +28,41 @@ searchButton.on('click',function(event) {
   })
   .then (function(dataApi_1){
     console.log(dataApi_1);
-    displayPokemon(dataApi_1);
+    // search history is passing the data on line 50-55 the parameter naming doesnt matter it wil be the same data
   })
+  //passing textInput from eventListener to pokemonApi_2 #1 pass
+  pokemonApi_2(textInput)
 })
-// requestUrl_2 = `https://api.pokemontcg.io/v2/cards?q=name:${textInput}&appid=9f5ed968cd7052cfa23b29d8fa2f4bad`
-// fetch(requestUrl_2)
-//   .then(function (response){
-//     return response.json()
-//   })
-//   .then (function(dataApi_2){
-//     console.log(dataApi_2);
-//   })
-// })
+// passing api key through header
 
-// tcg api
-// https://api.pokemontcg.io/v2/cards?q=name:grookey
+//textInput is a parameter that is being passed 
+
+// #4 textInput now exist in api function to call the data via event listener 
+async function api(textInput){
+    let response = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:${textInput}`,{
+      method: "GET",
+      headers: {
+        'x-api-key':"dbd45731-4537-4e36-83cf-77eafd972ad5"
+      }
+    })
+    let data = await response.json();
+    return data
+  }
+ // #2 pass textInput is now in function pokemonApi_2
+  function pokemonApi_2(textInput) {
+  //#3 pass now textInput is being passing into api
+  // .then(response is holding the api data)
+  // clg will display the photo 
+    api(textInput).then(response=>{
+      console.log(response.data[0].artist);
+       artistName =response.data[0].artist
+    })
+  } 
+
+
+
+
+
 
 function displayPokemon(api) {
   var cardDiv = $('<div>');
