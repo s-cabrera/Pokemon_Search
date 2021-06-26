@@ -113,3 +113,11 @@ img {font-size: 10%;}
 #poke-name{font-size: 30%;}
 #poke-element{font-size:15%;}
 #flavor-text{font-size:10%;}
+
+article[class="panel"]{
+    font-size: 10vh;
+}
+
+#panel-heading{font-size:40%;}
+#navbar{font-size:30%;}
+.sidebar-pokename{font-size: 60%;}
