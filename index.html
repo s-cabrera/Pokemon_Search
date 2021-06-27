@@ -31,7 +31,7 @@
         <h1> Pokemon Search</h1>
     </header>
     <div class="is-flex is-flex-direction-row is-justify-content-center 
-        is-flex-wrap-wrap is-align-content-start" id="content">          
+        is-flex-wrap-wrap is-align-content-start is-family-monospace" id="content">          
        
         
         <!-- Recents Searches Sidebar -->
@@ -104,12 +104,9 @@
                             <a class="navbar-item">
                               Jobs
                             </a>
-                            <a class="navbar-item">
-                              Contact
-                            </a>
                             <hr class="navbar-divider">
                             <a class="navbar-item">
-                              Report an issue
+                              Contact
                             </a>
                           </div>
                         </div>
@@ -117,17 +114,21 @@
                     </div>
                 </div>
                 <!-- Search -->
-                <div class="panel-block is-flex">
-                    <input class="input" type="text" placeholder="Search" id="search-2">
-                    <button class="button" type="submit" id="search-btn-2">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
+                
+                <div class="panel-block is-flex is-flex-direction-column is-justify-content-center">
+                    <p class="invalid is-hidden" style="text-align: center; color: rgb(187, 36, 36);">Input invalid</p>
+                    <div class="is-flex is-align-content-stretch">
+                      <input class="input" type="text" placeholder="Search" id="search-2" width="100%">
+                      <button class="button is-align-self-stretch" type="submit" id="search-btn-2">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                    </div>
                 </div>
               </article>
         </div>
         
        <!-- Search Bar/ Pokemon Display -->
-        <div class="column is-8 is-align-self-center is-flex is-flex-direction-column is-align-content-center is-justify-content-center" id='display'>
+        <div class="column is-12 is-align-self-center is-flex is-flex-direction-column is-align-content-center is-justify-content-center" id='display'>
             <!-- Search bar -->
             <div>
             <p class="invalid is-hidden" style="text-align: center; color: rgb(187, 36, 36);">Input invalid</p>
@@ -145,11 +146,18 @@
                 </div>
             </div>
             </div>
-            <!-- Pokemon Display Card-->
+
+            <!-- Loading icon -->
+            <div class="is-align-self-center is-hidden" id="loading-icon">
+              <button class="button is-warning is-loading" type="submit"></button>
+            </div>
+            
+            <!-- Pokemon Display Card -->
             <div class="is-card is-align-self-center is-flex is-hidden" id='infoCard'>
-                <div class="card-image">
+                <div class="card-image" width="40%">
                     <figure class="image">
                         <img alt="Placeholder image" id="display-image">
+                        <figcaption>Your label goes here</figcaption>
                     </figure>
                 </div>
                 <div class="card-content is-flex-grow-0">
@@ -174,7 +182,7 @@
     </div> 
 
     <!-- Footer -->
-    <footer class="column is-full" id="footer">Made by Brandon, Aldo, and Stephanie</footer> 
+    <footer class="column is-full">Made by Brandon, Aldo, and Stephanie</footer> 
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>

@@ -1,12 +1,10 @@
-*{
-    /* font-family: 'Shadows Into Light', cursive; */
-    font-family: 'Chewy', cursive;
-    /* font-family: 'Staatliches', cursive; */
-}
 body{
     height: 100%;
     overflow-y: scroll;
     /* background-color: rgb(153, 153, 153); */
+    font-family: 'Shadows Into Light', cursive;
+    /* font-family: 'Chewy', cursive; */
+    /* font-family: 'Staatliches', cursive; */
 }
 body::-webkit-scrollbar {
     display: none;
@@ -27,7 +25,7 @@ header{
     border-bottom: 5px solid black;
 }
 
-#footer{
+footer{
     width: 100%;
     height: fit-content;
     padding: 2px;
@@ -37,8 +35,8 @@ header{
     text-shadow: 2px 2px rgb(53, 53, 53);
     /* -webkit-text-stroke: 1px black; */
     -webkit-text-fill-color: white;
-    font-family: 'Do Hyeon', sans-serif;
-    /* font-family: 'Kirang Haerang', cursive; */
+    /* font-family: 'Do Hyeon', sans-serif; */
+    font-family: 'Kirang Haerang', cursive;
     /* font-family: 'Shadows Into Light', cursive; */
     /* font-family: 'Staatliches', cursive; */
     border-top: 5px solid black;
@@ -70,13 +68,13 @@ hr{
     margin: auto;
 }
 
-#container-1, article[class="panel"]{
+#container-1, .panel{
     height:100%;
 }
 
 #content, #display{
     height: 100vh;
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(238, 238, 238);
 }
 
 .dropdown button{
@@ -119,5 +117,29 @@ article[class="panel"]{
 }
 
 #panel-heading{font-size:40%;}
-#navbar{font-size:30%;}
+#navbar{font-size:25%;}
 .sidebar-pokename{font-size: 60%;}
+#search-2{
+    padding: 2%;
+    font-size: 30%;
+}
+
+#loading-icon button{
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    border: none;
+}
+
+.image{
+    background-color: rgb(218, 218, 218);
+    padding:5%;
+}
+
+figcaption{
+    font-size: 8%;
+}
+
+.panel [class="invalid"]{
+    font-size: 30%;
+}
+

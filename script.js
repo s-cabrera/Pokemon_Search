@@ -4,8 +4,6 @@ var initSearchBar = $('.onload-search-bar');
 var searchInput2El = $('#search-2');
 var searchBtn2El = $('#search-btn-2');
 var sidebar = $('.panel');
-var pokemon;
-var searches = Array(0);
 var recentSearch = $('#container-1');
 var displayImageEl = $("#display-image");
 var infoCard = $('#infoCard');
@@ -13,6 +11,10 @@ var pokeSprite = $('#sprite');
 var pokeName = $('.title');
 var pokeType = $('.subtitle');
 var pokeFlavor = $('.content');
+var searches = Array(0);
+var pokemon;
+
+
 
 function addSearchItem(name, img){
     let a = $('<a class="panel-block is-active">');
@@ -24,68 +26,77 @@ function addSearchItem(name, img){
     a.append(image);
     a.append(p);
 }
-
+//---------  Poke API call ------------//
 async function apiCall(pokemon){
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}/`)
   .then(function(response){
     if (!response.ok) {
-        $('.invalid').removeClass('is-invisible');       
+        $('.invalid').removeClass('is-hidden');   
         return 0;
     }
+    $('.invalid').addClass('is-hidden');
     return response.json();
   })
   .then(function(data){
+      searchBtn1El.removeClass('is-loading');
+      searchBtn2El.removeClass('is-loading');
       if(!data){
           console.log("No data recorded")
           return;
-      }
+        }
+        //Show the sidebar and loading icon. Hide the initSearchBar
+        initSearchBar.addClass('is-hidden');
+        $('#loading-icon').removeClass('is-hidden');
+        $('#display').removeClass('is-12');
+        $('#display').removeClass('is-8');
+        recentSearch.removeClass('is-hidden');
+
+        //Set variables and store data
         console.log(data);
         id = data.id;
         var name = data.name;
         name = name[0].toUpperCase() + name.slice(1, (name.length));
         searches.push(name);
-        console.log(data);
-        console.log(`Name: ${data.name}, Sprite URL: ${data.sprites.front_default}`);
-        displayInfo(data, name);
+
+        //Add Search Item
         addSearchItem(name, data.sprites.front_default);
+        
+        //API calls
         apiCallAgain(data.name);
         pokemonApi_2(data.name);
-    });
-    fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.toLowerCase()}/`)
-    .then(function(response){
-      if (!response.ok) {
-          console.log('Network response was not ok');
-          return 0;
-      }
-      return response.json();
-    })
-    .then(function(data){
-        if(!data){
-            console.log("No data recorded")
-            return;
-        }
         
-        console.log(`Name: ${data.name}, Description: ${data.flavor_text_entries[0].flavor_text}`)
-        $('content').text(data.flavor_text_entries[0].flavor_text)
-      });
+        //Update the display card info
+        displayInfo(data, name);
+    });
 }
 
+//--------  Flavor text Poke API call ---------// 
 async function apiCallAgain(pokemon) {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.toLowerCase()}/`)
     .then(function(response){
         if (!response.ok) {
-            console.log('Network response was not ok');
+            console.log('Flavor text API response was not ok');
             return 0;
         }
         return response.json();
     })
     .then(function(flavor){
-        console.log(flavor);
-        let flav = flavor.flavor_text_entries[1].flavor_text;
-        pokeFlavor.text(flav);
+        if(!flavor){
+            console.log("Flavor text not recorded");
+        }
+        let flavor_text;
+        for(let i = 0; i < flavor.flavor_text_entries.length; i++){
+            if(flavor.flavor_text_entries[i].language.name === "en"){
+                flavor_text = flavor.flavor_text_entries[i].flavor_text;
+                break;
+            }
+        }
+        console.log(`Name: ${flavor.name}, Description: ${flavor_text}`)
+        pokeFlavor.text(flavor_text);
     })
 }
 
+//--------  TCG Card API Call ---------// 
 async function api(textInput){
     let response = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:${textInput}`,{
       method: "GET",
@@ -97,21 +108,22 @@ async function api(textInput){
     return data
   }
 
-//--------  Flavor text API call ---------// 
-// #2 pass textInput is now in function pokemonApi_2
+
   function pokemonApi_2(textInput) {
-  //#3 pass now textInput is being passing into api
-  // .then(response is holding the api data)
-  // clg will display the photo 
     api(textInput).then(response=>{
         let image = response.data[1].images.large;
         console.log(response);
         console.log(response.data[1].artist);
-        let artistName =response.data[1].artist
-       displayImageEl.attr('src', image);
+        displayImageEl.siblings(1).text(response.data[1].artist);
+        displayImageEl.attr('src', image);
+
+       //Display the Pokemon card and hide the loading icon AFTER image is set
+       $('#loading-icon').addClass('is-hidden');
+       infoCard.removeClass('is-hidden');
     })
   } 
 
+//------------ Display Pokemon Card Info -------------//
 function displayInfo(api, name) {
     let icon = api.sprites.front_default;
     let type = api.types[0].type.name;
@@ -125,14 +137,15 @@ var  searchBtn1Handler = function(){
     if(searchInput1El.val().length > 0){
         searchBtn1El.addClass('is-loading');
         apiCall(searchInput1El.val().trim());
-        recentSearch.removeClass('is-hidden');
-        initSearchBar.addClass('is-hidden');
-        infoCard.removeClass('is-hidden');
+        // recentSearch.removeClass('is-hidden');
+        // initSearchBar.addClass('is-hidden');
     }
 }
 
 var searchBtn2Handler = function() {
     if (searchInput2El.val().length > 0) {
+     infoCard.addClass('is-hidden');
+     searchBtn2El.addClass('is-loading');
      apiCall(searchInput2El.val().trim());
     }
 }
