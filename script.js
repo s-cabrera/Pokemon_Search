@@ -41,12 +41,10 @@ async function apiCall(pokemon) {
                 console.log("No data recorded")
                 return;
             }
-            console.log(data);
             id = data.id;
             var name = data.name;
-            name = name[0].toUpperCase() + name.slice(1, (name.length));
+            name = capitalizeFirstLetter(name);
             searches.push(name);
-            console.log(data);
             console.log(`Name: ${data.name}, Sprite URL: ${data.sprites.front_default}`);
             displayInfo(data, name);
             addSearchItem(name, data.sprites.front_default);
@@ -71,9 +69,7 @@ async function apiCallAgain(pokemon) {
                 console.log("No data recorded");
                 return;
             };
-            console.log(flavor);
-            let flav = flavor.flavor_text_entries[1].flavor_text;
-            pokeFlavor.text(flav);
+            displayFlavor(flavor);
             return resolve(flavor);
         });
     })
@@ -99,17 +95,26 @@ function pokemonApi_2(textInput) {
     // clg will display the photo 
     api(textInput)
         .then(response => {
-            let image = response.data[1].images.large;
-            displayImageEl.attr('src', image);
+            displayCard(response);
             return resolve(response);
         })
     })
 }
 
+function displayFlavor(flavorApi) {
+    let flav = flavorApi.flavor_text_entries[1].flavor_text;
+    pokeFlavor.text(flav);
+}
+
+function displayCard(cardApi) {
+    let image = cardApi.data[1].images.large;
+    displayImageEl.attr('src', image);
+}
+
 function displayInfo(api, name) {
     let icon = api.sprites.front_default;
     let type = api.types[0].type.name;
-    type = type[0].toUpperCase() + type.slice(1, (type.length))
+    type = capitalizeFirstLetter(type);
     pokeSprite.attr('src', icon);
     pokeName.text(name);
     pokeType.text(`Element: ${type}`);
@@ -117,10 +122,13 @@ function displayInfo(api, name) {
 
 function savePokemon(one, two, three) {
     let pokeData = JSON.stringify([one, two, three]);
-    console.log(JSON.parse(pokeData));
     let pokeKey = one.name;
     localStorage.setItem(pokeKey, pokeData);
 }
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
 var searchBtn1Handler = function () {
     if (searchInput1El.val().length > 0) {
@@ -144,8 +152,11 @@ searchBtn2El.on('click', searchBtn2Handler);
 recentSearch.on('click', function (event) {
     if (event.target.classList.contains('recent')) {
         let recentName = event.target.id;
-        console.log(recentName);
         let recall = JSON.parse(localStorage.getItem(recentName));
-        console.log(recall);
+        let one = recall[0], two = recall[1], three = recall[2];
+        let title = capitalizeFirstLetter(recentName);
+        displayInfo(one, title);
+        displayFlavor(two);
+        displayCard(three);
     }
 })
