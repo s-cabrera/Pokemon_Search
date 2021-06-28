@@ -143,3 +143,6 @@ figcaption{
     font-size: 30%;
 }
 
+.panel-block{
+    padding: .25em 0.75em;
+}
