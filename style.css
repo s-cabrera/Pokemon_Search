@@ -159,3 +159,22 @@ figcaption{
   height: 10vh;
   width: 10vh;
 }
+
+@media screen and (max-width: 992px) {
+  #infoCard,
+  .panel {
+    background-color: greenyellow;
+    flex-wrap: wrap;
+  }
+  /* #sprite {
+    display: flex;
+    justify-content: center;
+  } */
+  #poke-name {
+    font-size: 10%;
+  }
+  .card-image {
+    width: 100%;
+    margin-right: 10%;
+  }
+}
