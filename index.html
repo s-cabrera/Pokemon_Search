@@ -26,16 +26,14 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <!-- <div class="columns is-centered is-multiline is-desktop" height="100%"> -->
     <!-- Header -->
-    <header class="column is-full">
-        <h1> Pokemon Search</h1>
-    </header>
-    <div class="columns is-flex is-flex-direction-row is-justify-content-center 
-        is-flex-wrap-wrap is-align-content-start is-family-monospace" id="content">          
-       
-        
+    <header class="is-full">
+      <h1> Pokemon Search</h1>
+    </header> 
+    <div class="is-12 is-family-monospace" height="100vh" id="content">
         <!-- Recents Searches Sidebar -->
-        <div class="column is-4 is-hidden" id="container-1">
+      <div class="is-4 is-hidden" id="container-1">
             <article class="panel">
                 <p class="panel-heading" id="panel-heading">
                   Recent Searches
@@ -117,22 +115,22 @@
                 
                 <div class="panel-block is-flex is-flex-direction-column is-justify-content-center">
                     <p class="invalid is-hidden" style="text-align: center; color: rgb(187, 36, 36);">Input invalid</p>
-                    <div class="is-flex is-align-content-stretch">
-                      <input class="input" type="text" placeholder="Search" id="search-2" width="100%">
-                      <button class="button is-align-self-stretch" type="submit" id="search-btn-2">
+                    <div style="display: flex;">
+                      <input class="input is-align-content-stretch" type="text" placeholder="Search" id="search-2" width="100%">
+                      <button class="button is-align-content-stretch" type="submit" id="search-btn-2">
                           <i class="fa fa-search" aria-hidden="true"></i>
                       </button>
                     </div>
                 </div>
               </article>
-        </div>
+      </div>
         
        <!-- Search Bar/ Pokemon Display -->
-        <div class="column is-12 is-align-self-center is-flex is-flex-direction-column is-align-content-center is-justify-content-center" id='display'>
+        <div class="is-12" id='display'> 
             <!-- Search bar -->
-            <div>
+            <div class="onload-search-bar">
             <p class="invalid is-hidden" style="text-align: center; color: rgb(187, 36, 36);">Input invalid</p>
-            <div class="field is-horizontal onload-search-bar" style="text-align:center;">    
+            <div class="field is-horizontal " style="text-align:center;">    
                 <div class="field-label is-normal">
                     <label class="label">Search:</label>
                 </div>
@@ -154,7 +152,7 @@
             
             <!-- Pokemon Display Card -->
             <div class="is-card is-align-self-center is-flex is-hidden" id='infoCard'>
-                <div class="card-image" width="40%">
+                <div class="card-image">
                     <figure class="image">
                         <img alt="Placeholder image" id="display-image">
                         <figcaption>Your label goes here</figcaption>
@@ -162,7 +160,7 @@
                 </div>
                 <div class="card-content is-flex-grow-0">
                     <div class="media">
-                    </figure class="media-left is-align-self-flex-start image">
+                      </figure class="media-left is-align-self-flex-start image">
                           <img  src="" alt="Placeholder image" id='sprite'>
                       </figure>
                       <div class="media-content" id="media-content">
@@ -178,12 +176,13 @@
                     </div>
                 </div>
             </div>
-        </div>   
-    </div> 
-
+        </div>
+    </div>
+ 
     <!-- Footer -->
-    <footer class="column is-full">Made by Brandon, Aldo, and Stephanie</footer> 
+    <footer class="is-full is-full-mobile">Made by Brandon, Aldo, and Stephanie</footer> 
 
+    <!-- </div>   -->
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

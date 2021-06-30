@@ -5,6 +5,7 @@ body{
     font-family: 'Shadows Into Light', cursive;
     /* font-family: 'Chewy', cursive; */
     /* font-family: 'Staatliches', cursive; */
+    background-color: rgb(238, 238, 238);
 }
 body::-webkit-scrollbar {
   display: none;
@@ -46,6 +47,29 @@ footer{
     border-top: 5px solid black;
 }
 
+
+
+
+#content, #container-1, #display{
+  height: 100vh;
+}
+
+#content{
+  display: flex;
+  justify-content: start;
+}
+
+#container-1{
+  padding: 2px;
+}
+
+#display{
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: auto;
+}
+
 .is-card {
   border: 2px solid darkgray;
   border-radius: 5px;
@@ -68,17 +92,10 @@ hr {
 }
 
 .onload-search-bar {
-  width: 85%;
-  margin: auto;
-}
-
-#container-1, .panel{
-    height:100%;
-}
-
-#content, #display{
-    height: 100vh;
-    background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: space-around;
 }
 
 .dropdown button {
@@ -86,8 +103,10 @@ hr {
   border: none;
   text-align: end;
 }
-
-.panel {
+.panel{
+  height:100%;
+  width: 100%;
+  font-size: 10vh;
   overflow-y: scroll;
   border: 2px solid darkgray;
 }
@@ -121,12 +140,8 @@ img {
   font-size: 10%;
 }
 
-article[class="panel"] {
-  font-size: 10vh;
-}
-
 #panel-heading{font-size:40%;}
-#navbar{font-size:25%;}
+#navbar{font-size:20%;}
 .sidebar-pokename{font-size: 60%;}
 #search-2{
     padding: 2%;
@@ -160,21 +175,62 @@ figcaption{
   width: 10vh;
 }
 
-@media screen and (max-width: 992px) {
-  #infoCard,
-  .panel {
-    background-color: greenyellow;
-    flex-wrap: wrap;
-  }
-  /* #sprite {
-    display: flex;
-    justify-content: center;
-  } */
-  #poke-name {
-    font-size: 10%;
-  }
-  .card-image {
-    width: 100%;
-    margin-right: 10%;
-  }
+@media screen and (max-width: 1025px) {
+
+    #container-1, #display{
+        margin: 0;
+        width: 90%;
+        height: fit-content;
+        align-self: center;
+      }
+    #content{
+      height:186vh;
+      flex-direction: column;
+    }
+    #infoCard{
+        flex-wrap: wrap;
+    }
+    .card-image {
+        border-right: none;
+        border-bottom: 2px solid black;
+    }
+    .media{
+        display: flex;
+        flex-direction: column;
+    }
+    .media-content p{
+        width:100%
+    }
 }
+
+/* @media screen and (max-width: 768px) {
+    #content{
+        min-height:100%;
+    }
+    #container-1, #display{
+        width: 90%;
+        margin: auto;
+        height: fit-content;
+      }
+
+    #sprite{display: none;}
+    .searchItem-img{
+        height: 5vh;
+        width: 5vh;
+    }
+    #infoCard{
+        flex-wrap: wrap;
+    }
+    .card-image {
+        width: 80%;
+        border-right: none;
+        border-bottom: 2px solid black;
+    }
+    .media{
+        display: flex;
+        flex-direction: column;
+    }
+    .media-content p{
+        width:100%
+    }
+} */
