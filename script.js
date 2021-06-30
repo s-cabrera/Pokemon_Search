@@ -47,7 +47,7 @@ async function apiCall(pokemon) {
             initSearchBar.addClass('is-hidden');
             $('#loading-icon').removeClass('is-hidden');
             $('#display').removeClass('is-12');
-            $('#display').removeClass('is-8');
+            $('#display').addClass('is-8');
             recentSearch.removeClass('is-hidden');
 
             var name = data.name;
