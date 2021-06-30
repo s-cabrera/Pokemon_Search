@@ -67,6 +67,7 @@ footer{
 display: flex;
 flex-direction: column;
 justify-content: center;
+margin: auto;
 }
 
 .is-card {
@@ -175,16 +176,17 @@ figcaption{
 }
 
 @media screen and (max-width: 1025px) {
-    #content{
-      height:186vh;
-      flex-direction: column;
-    }
+
     #container-1, #display{
+        margin: 0;
         width: 90%;
         height: fit-content;
         align-self: center;
       }
-
+    #content{
+      height:186vh;
+      flex-direction: column;
+    }
     #infoCard{
         flex-wrap: wrap;
     }
