@@ -1,5 +1,5 @@
 # Pokemon Search
-with unique name, description, technologies used, screenshot, and link to deployed application
+
 ## Description
 * AS A USER, I WANT TO SEARCH FOR A POKEMON AND GET ITS INFORMATION.
 
@@ -15,7 +15,7 @@ with unique name, description, technologies used, screenshot, and link to deploy
 * Font Awesome
 
 ## Demo
-
+![Deployed Application](./assets/demo.gif)
 
 ### Links
 
