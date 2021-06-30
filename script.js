@@ -11,7 +11,7 @@ var pokeSprite = $('#sprite');
 var pokeName = $('.title');
 var pokeType = $('.subtitle');
 var pokeFlavor = $('.content');
-
+//Stephanie: this function adds a recently searched item to the sidebar.
 function addSearchItem(name, img) {
     let a = $('<a class="panel-block is-active">');
     let image = $(`<image src=${img} class="searchItem-img">`);
@@ -24,7 +24,7 @@ function addSearchItem(name, img) {
     a.append(image);
     a.append(p);
 }
-
+//Aldo: this function calls the first API for data.
 async function apiCall(pokemon) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}/`)
         .then(function (response) {
@@ -49,7 +49,7 @@ async function apiCall(pokemon) {
             $('#display').removeClass('is-12');
             $('#display').addClass('is-8');
             recentSearch.removeClass('is-hidden');
-
+            //Brandon: this section of the function handles the data that is being received.
             var name = data.name;
             name = capitalizeFirstLetter(name);
             displayInfo(data, name);
@@ -59,7 +59,7 @@ async function apiCall(pokemon) {
             savePokemon(data, flavorText, tcgCard);
         });
 };
-
+//Brandon: this function calls for different data from the 1st API, namely the flavor text
 async function apiCallAgain(pokemon) {
     return new Promise(function(resolve, reject) {
         fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.toLowerCase()}/`)
@@ -80,7 +80,7 @@ async function apiCallAgain(pokemon) {
         });
     })
 };
-
+//Aldo: this asyncronous function utilizes an API key to call the TCG API
 async function api(textInput) {
     let response = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:${textInput}`, {
         method: "GET",
@@ -102,7 +102,7 @@ function pokemonApi_2(textInput) {
         })
     })
 }
-
+//Brandon: this function displays flavor text from API
 function displayFlavor(flavorApi) {
     console.log(flavorApi);
     let flav = flavorApi.flavor_text_entries[0].flavor_text;
@@ -114,7 +114,7 @@ function displayFlavor(flavorApi) {
     }
     pokeFlavor.text(flav);
 }
-
+//Brandon: this function displays information from 2nd API
 function displayCard(cardApi) {
     let image = cardApi.data[1].images.large;
     displayImageEl.attr('src', image);
@@ -122,7 +122,7 @@ function displayCard(cardApi) {
     $('#loading-icon').addClass('is-hidden');
     infoCard.removeClass('is-hidden');
 }
-
+//Brandon: this function displays information from 1st API
 function displayInfo(api, name) {
     let icon = api.sprites.front_default;
     let type = api.types[0].type.name;
@@ -131,13 +131,13 @@ function displayInfo(api, name) {
     pokeName.text(name);
     pokeType.text(`Element: ${type}`);
 }
-
+//Brandon: this function saves the data from the 3 apis to localStorage
 function savePokemon(one, two, three) {
     let pokeData = JSON.stringify([one, two, three]);
     let pokeKey = one.name;
     localStorage.setItem(pokeKey, pokeData);
 }
-
+//Brandon: wrote this small function for capitalizing Pokemon names
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -149,7 +149,7 @@ function capitalizeFirstLetter(string) {
         apiCall(searchInput1El.val().trim());
     }
 }
-
+//Brandon: wrote this click handler as a copy of the first but different since it was the second search bar
 var searchBtn2Handler = function (event) {
     //console.log($(event.target).html());
     if (searchInput2El.val().length > 0) {
@@ -159,7 +159,7 @@ var searchBtn2Handler = function (event) {
     }
 }
 
-
+//Brandon: wrote click event listeners and event handlers
 searchBtn1El.on('click', searchBtn1Handler);
 searchBtn2El.on('click', searchBtn2Handler);
 recentSearch.on('click', function (event) {
