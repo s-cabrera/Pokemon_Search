@@ -4,18 +4,18 @@
 * AS A USER, I WANT TO SEARCH FOR A POKEMON AND GET ITS INFORMATION.
 
 ## Technologies Used
-* HTML
-* CSS
-* Javascript
-* Jquery
-* Bulma
-* Google Fonts
-* Poke API
-* Pokemon TCG Card API
-* Font Awesome
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [jQuery](https://developer.mozilla.org/en-US/docs/Glossary/jQuery)
+* [Bulma](https://bulma.io/)
+* [Google Fonts](https://fonts.google.com/)
+* [Poke API](https://pokeapi.co/)
+* [Pokemon TCG Card API](https://pokemontcg.io/)
+* [Font Awesome](https://fontawesome.com/)
 
 ## Demo
-![Deployed Application](./assets/demo.gif)
+[![Deployed Application](./assets/demo.gif)](https://s-cabrera.github.io/Pokemon_Search/)
 
 ### Links
 
